@@ -7,8 +7,11 @@ export declare const EventPreview: React.FC<EventPreviewProps>;
 export declare const EventsList: ({ events, day, hoursInterval, rowHeight, renderEvent, }: EventsListProps) => (React.ReactElement<any, any> | null)[];
 export declare const HoursList: ({ hoursInterval, rowHeight, renderHour, }: HoursListProps) => (React.ReactElement<any, any> | null)[];
 export declare const onClickPreview: (e: any, rowHeight: any) => void;
+export declare const onMouseUpPreview: (e: any) => void;
+export declare const onMouseDownPreview: (e: any) => void;
+export declare const onMouseMovePreview: (e: any, rowHeight: any) => void;
 export declare const TimeTable: {
-    ({ events, hoursInterval, timeLabel, getDayLabel, renderEvent, renderHour, onClick, }: TimeTableProps): JSX.Element;
+    ({ events, hoursInterval, timeLabel, getDayLabel, renderEvent, renderHour, onClick, onMouseUp, onMouseDown, onMouseMove, }: TimeTableProps): JSX.Element;
     propTypes: {
         events: PropTypes.Validator<object>;
         hoursInterval: PropTypes.Requireable<PropTypes.InferProps<{

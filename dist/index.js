@@ -3976,11 +3976,11 @@ var EventsList = function (_a) {
     });
 };
 var DayColumnPreview = function (_a) {
-    var events = _a.events, day = _a.day, index = _a.index, rowHeight = _a.rowHeight, getDayLabel = _a.getDayLabel, renderEvent = _a.renderEvent, hoursInterval = _a.hoursInterval, onClick = _a.onClick;
+    var events = _a.events, day = _a.day, index = _a.index, rowHeight = _a.rowHeight, getDayLabel = _a.getDayLabel, renderEvent = _a.renderEvent, hoursInterval = _a.hoursInterval, onClick = _a.onClick, onMouseUp = _a.onMouseUp, onMouseDown = _a.onMouseDown, onMouseMove = _a.onMouseMove;
     return (jsxRuntime.jsxs("div", __assign({ className: "".concat(classNames.day, " ").concat(day), style: {
             backgroundSize: "1px ".concat(2 * rowHeight, "vh"),
             width: "calc((100% - 5rem) / ".concat(Object.keys(events).length, ")"),
-        }, onClick: function (e) { return onClick(e, rowHeight); } }, { children: [jsxRuntime.jsx("div", __assign({ className: classNames.day_title, style: { height: "".concat(rowHeight, "vh") } }, { children: getDayLabel(day) })), EventsList({
+        }, onClick: function (e) { return onClick(e, rowHeight); }, onMouseDown: onMouseDown, onMouseUp: onMouseUp, onMouseMove: function (e) { return onMouseMove(e, rowHeight); } }, { children: [jsxRuntime.jsx("div", __assign({ className: classNames.day_title, style: { height: "".concat(rowHeight, "vh") } }, { children: getDayLabel(day) })), EventsList({
                 events: events,
                 day: day,
                 renderEvent: renderEvent,
@@ -4004,9 +4004,12 @@ var HoursList = function (_a) {
 var onClickPreview = function (e, rowHeight) {
     console.log(e, rowHeight);
 };
+var onMouseUpPreview = function (e) { };
+var onMouseDownPreview = function (e) { };
+var onMouseMovePreview = function (e, rowHeight) { };
 var TimeTable = function (_a) {
-    var events = _a.events, _b = _a.hoursInterval, hoursInterval = _b === void 0 ? DEFAULT_HOURS_INTERVAL : _b, _c = _a.timeLabel, timeLabel = _c === void 0 ? "Time" : _c, _d = _a.getDayLabel, getDayLabel = _d === void 0 ? getDefaultDayLabel : _d, _e = _a.renderEvent, renderEvent = _e === void 0 ? EventPreview : _e, _f = _a.renderHour, renderHour = _f === void 0 ? HourPreview : _f, _g = _a.onClick, onClick = _g === void 0 ? onClickPreview : _g;
-    var _h = React__namespace.useState(0), rowHeight = _h[0], setRowHeight = _h[1];
+    var events = _a.events, _b = _a.hoursInterval, hoursInterval = _b === void 0 ? DEFAULT_HOURS_INTERVAL : _b, _c = _a.timeLabel, timeLabel = _c === void 0 ? "Time" : _c, _d = _a.getDayLabel, getDayLabel = _d === void 0 ? getDefaultDayLabel : _d, _e = _a.renderEvent, renderEvent = _e === void 0 ? EventPreview : _e, _f = _a.renderHour, renderHour = _f === void 0 ? HourPreview : _f, _g = _a.onClick, onClick = _g === void 0 ? onClickPreview : _g, _h = _a.onMouseUp, onMouseUp = _h === void 0 ? onMouseUpPreview : _h, _j = _a.onMouseDown, onMouseDown = _j === void 0 ? onMouseDownPreview : _j, _k = _a.onMouseMove, onMouseMove = _k === void 0 ? onMouseMovePreview : _k;
+    var _l = React__namespace.useState(0), rowHeight = _l[0], setRowHeight = _l[1];
     React__namespace.useEffect(function () {
         setRowHeight(getRowHeight(hoursInterval.from, hoursInterval.to));
     }, [hoursInterval]);
@@ -4020,6 +4023,9 @@ var TimeTable = function (_a) {
                     renderEvent: renderEvent,
                     hoursInterval: hoursInterval,
                     onClick: onClick,
+                    onMouseUp: onMouseUp,
+                    onMouseDown: onMouseDown,
+                    onMouseMove: onMouseMove,
                 });
             })] })));
 };
@@ -4050,3 +4056,6 @@ exports.TimeTable = TimeTable;
 exports["default"] = TimeTable;
 exports.getDefaultDayLabel = getDefaultDayLabel;
 exports.onClickPreview = onClickPreview;
+exports.onMouseDownPreview = onMouseDownPreview;
+exports.onMouseMovePreview = onMouseMovePreview;
+exports.onMouseUpPreview = onMouseUpPreview;

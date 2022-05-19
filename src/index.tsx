@@ -102,6 +102,9 @@ const DayColumnPreview = ({
   renderEvent,
   hoursInterval,
   onClick,
+  onMouseUp,
+  onMouseDown,
+  onMouseMove,
 }: DayColumnPreviewProps) => (
   <div
     className={`${classNames.day} ${day}`}
@@ -111,6 +114,9 @@ const DayColumnPreview = ({
     }}
     key={`${day}-${index}`}
     onClick={(e) => onClick(e, rowHeight)}
+    onMouseDown={onMouseDown}
+    onMouseUp={onMouseUp}
+    onMouseMove={(e) => onMouseMove(e, rowHeight)}
   >
     <div className={classNames.day_title} style={{ height: `${rowHeight}vh` }}>
       {getDayLabel(day)}
@@ -146,6 +152,9 @@ export const onClickPreview = (e: any, rowHeight: any) => {
   console.log(e, rowHeight);
 };
 
+export const onMouseUpPreview = (e: any) => {};
+export const onMouseDownPreview = (e: any) => {};
+export const onMouseMovePreview = (e: any, rowHeight: any) => {};
 export const TimeTable = ({
   events,
   hoursInterval = DEFAULT_HOURS_INTERVAL,
@@ -154,6 +163,9 @@ export const TimeTable = ({
   renderEvent = EventPreview,
   renderHour = HourPreview,
   onClick = onClickPreview,
+  onMouseUp = onMouseUpPreview,
+  onMouseDown = onMouseDownPreview,
+  onMouseMove = onMouseMovePreview,
 }: TimeTableProps) => {
   const [rowHeight, setRowHeight] = React.useState<number>(0);
 
@@ -183,6 +195,9 @@ export const TimeTable = ({
           renderEvent,
           hoursInterval,
           onClick,
+          onMouseUp,
+          onMouseDown,
+          onMouseMove,
         })
       )}
     </div>
