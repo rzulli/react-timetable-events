@@ -25,7 +25,7 @@
 }
 
 .day_title {
-  background-color: #34495e;
+  background-color: rgba(0, 47, 108);
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -42,7 +42,7 @@
 }
 
 .hour {
-  background-color: rgba(52, 73, 94, 0.9);
+  background-color: rgba(0, 47, 108, 0.9);
   font-size: 12px;
   text-align: center;
   width: 5rem;
