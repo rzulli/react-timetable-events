@@ -110,7 +110,7 @@ const DayColumnPreview = ({
       width: `calc((100% - 5rem) / ${Object.keys(events).length})`,
     }}
     key={`${day}-${index}`}
-    onClick={(e) => onClick(e)}
+    onClick={(e) => onClick(e, rowHeight)}
   >
     <div className={classNames.day_title} style={{ height: `${rowHeight}vh` }}>
       {getDayLabel(day)}
