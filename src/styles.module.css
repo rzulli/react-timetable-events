@@ -1,9 +1,14 @@
 .time_table_wrapper {
   height: 100%;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #efefef;
   overflow: hidden;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .day {
@@ -11,12 +16,17 @@
   height: 100vh;
   float: left;
   background-color: #fff;
-  background-image: linear-gradient(rgba(0,0,0,.08) 50%, transparent 50%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.08) 50%, transparent 50%);
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .day_title {
   background-color: #34495e;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -24,13 +34,23 @@
   flex-direction: column;
   text-align: center;
   z-index: 2;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .hour {
-  background-color: rgba(52, 73, 94,0.9);
+  background-color: rgba(52, 73, 94, 0.9);
   font-size: 12px;
   text-align: center;
   width: 5rem;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .event {
@@ -39,12 +59,17 @@
   height: 15vh;
   line-height: 15vh;
   background-color: rgb(18, 205, 177);
-  font-size: .7em;
+  font-size: 0.7em;
   font-weight: 300;
   justify-content: center;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .event_info {
