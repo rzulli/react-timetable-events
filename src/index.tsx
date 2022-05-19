@@ -142,8 +142,8 @@ export const HoursList = ({
   );
 };
 
-export const onClickPreview = ({ e }: any) => {
-  console.log(e);
+export const onClickPreview = (e: any, rowHeight: any) => {
+  console.log(e, rowHeight);
 };
 
 export const TimeTable = ({

@@ -51,6 +51,12 @@ export interface DayColumnPreviewProps {
   getDayLabel: (day: string) => string;
   renderEvent: React.FC<EventPreviewProps>;
   hoursInterval: typeof DEFAULT_HOURS_INTERVAL;
+  onClick: (e: any, rowHeight: any) => void;
+}
+
+export interface onClickProps {
+  e: any;
+  rowHeight: any;
 }
 
 export interface HoursListProps {
@@ -58,7 +64,6 @@ export interface HoursListProps {
   rowHeight: number;
   renderHour: React.FC<HourPreviewProps>;
 }
-
 export interface TimeTableProps {
   events: Events;
   hoursInterval?: typeof DEFAULT_HOURS_INTERVAL;
@@ -66,4 +71,5 @@ export interface TimeTableProps {
   getDayLabel?: (day: string) => string;
   renderEvent?: React.FC<EventPreviewProps>;
   renderHour?: React.FC<HourPreviewProps>;
+  onClick: (e: any, rowHeight: any) => void;
 }

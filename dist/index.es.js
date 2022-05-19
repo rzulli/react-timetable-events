@@ -3954,7 +3954,7 @@ var DayColumnPreview = function (_a) {
     return (jsxs("div", __assign({ className: "".concat(classNames.day, " ").concat(day), style: {
             backgroundSize: "1px ".concat(2 * rowHeight, "vh"),
             width: "calc((100% - 5rem) / ".concat(Object.keys(events).length, ")"),
-        }, onClick: function (e) { return onClick(e); } }, { children: [jsx("div", __assign({ className: classNames.day_title, style: { height: "".concat(rowHeight, "vh") } }, { children: getDayLabel(day) })), EventsList({
+        }, onClick: function (e) { return onClick(e, rowHeight); } }, { children: [jsx("div", __assign({ className: classNames.day_title, style: { height: "".concat(rowHeight, "vh") } }, { children: getDayLabel(day) })), EventsList({
                 events: events,
                 day: day,
                 renderEvent: renderEvent,
@@ -3975,9 +3975,8 @@ var HoursList = function (_a) {
         });
     });
 };
-var onClickPreview = function (_a) {
-    var e = _a.e;
-    console.log(e);
+var onClickPreview = function (e, rowHeight) {
+    console.log(e, rowHeight);
 };
 var TimeTable = function (_a) {
     var events = _a.events, _b = _a.hoursInterval, hoursInterval = _b === void 0 ? DEFAULT_HOURS_INTERVAL : _b, _c = _a.timeLabel, timeLabel = _c === void 0 ? "Time" : _c, _d = _a.getDayLabel, getDayLabel = _d === void 0 ? getDefaultDayLabel : _d, _e = _a.renderEvent, renderEvent = _e === void 0 ? EventPreview : _e, _f = _a.renderHour, renderHour = _f === void 0 ? HourPreview : _f, _g = _a.onClick, onClick = _g === void 0 ? onClickPreview : _g;
