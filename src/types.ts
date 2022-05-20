@@ -53,7 +53,7 @@ export interface DayColumnPreviewProps {
   hoursInterval: typeof DEFAULT_HOURS_INTERVAL;
   onClick: (e: any, rowHeight: any) => void;
   onMouseUp: (e: any) => void;
-  onMouseDown: (e: any) => void;
+  onMouseDown: (e: any, rowHeight: any) => void;
   onMouseMove: (e: any, rowHeight: any) => void;
 }
 
@@ -76,6 +76,6 @@ export interface TimeTableProps {
   renderHour?: React.FC<HourPreviewProps>;
   onClick: (e: any, rowHeight: any) => void;
   onMouseUp: (e: any) => void;
-  onMouseDown: (e: any) => void;
+  onMouseDown: (e: any, rowHeight: any) => void;
   onMouseMove: (e: any, rowHeight: any) => void;
 }

@@ -114,7 +114,7 @@ const DayColumnPreview = ({
     }}
     key={`${day}-${index}`}
     onClick={(e) => onClick(e, rowHeight)}
-    onMouseDown={onMouseDown}
+    onMouseDown={(e) => onMouseDown(e, rowHeight)}
     onMouseUp={onMouseUp}
     onMouseMove={(e) => onMouseMove(e, rowHeight)}
   >
